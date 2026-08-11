@@ -1,0 +1,13 @@
+Checkpoint Fabric
+Copyright 2026 Checkpoint Fabric contributors
+
+This product includes software developed by the Checkpoint Fabric contributors.
+
+Checkpoint Fabric is an independent project.
+
+FlashTier, Context Fabric, Compute Fabric, and Reclaim Fabric are separate sibling
+projects. Checkpoint Fabric defines clean conceptual integration boundaries with them,
+but does not contain their source code and does not require them to build or run.
+
+This product uses the Apache License 2.0. See LICENSE.
+

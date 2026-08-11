@@ -1,0 +1,53 @@
+[package]
+name = "checkpoint-fabric"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.81"
+description = "Checkpoint Fabric: a vendor-neutral execution-survival runtime for AI infrastructure"
+license = "Apache-2.0"
+repository = "https://github.com/summon-software-labs/checkpoint-fabric"
+homepage = "https://github.com/summon-software-labs/checkpoint-fabric"
+keywords = ["checkpoint", "resume", "recovery", "execution", "runtime"]
+categories = ["development-tools", "parser-implementations"]
+readme = "README.md"
+
+[lib]
+name = "checkpoint_fabric"
+path = "src/lib.rs"
+
+[[bin]]
+name = "checkpointfabric"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+crc = "2"
+ctrlc = "3"
+env_logger = "0.11"
+fs2 = "0.4"
+hex = "0.4"
+log = "0.4"
+rand = "0.8"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tempfile = "3"
+thiserror = "2"
+zstd = "0.13"
+
+[dev-dependencies]
+criterion = "0.5"
+proptest = "1"
+
+[[bench]]
+name = "fabric"
+harness = false
+
+[profile.release]
+lto = "thin"
+debug = false
+
+[profile.bench]
+lto = "thin"
