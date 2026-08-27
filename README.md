@@ -259,23 +259,6 @@ registered performance cases; no throughput or latency claim is made here.
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — community participation standards.
 - [CHANGELOG.md](CHANGELOG.md) — implemented surface and final hardening history.
 
-## Current limitations
-
-- The coordinator is a single durable authority protected by an exclusive local
-  data-directory lease; it is not a replicated consensus service.
-- Network transport has integrity framing and authority epochs but no peer
-  authentication, authorization identity proof, or encryption. Use loopback or a
-  separately protected network.
-- The only shipped durable backend is local filesystem storage. Multi-host validation,
-  object storage, distributed filesystems, RDMA, and accelerator-native capture are not
-  present in the closed implementation.
-- The object model represents incremental and delta checkpoints and validates their
-  ancestry, but the built-in capture flow does not produce incremental/delta payloads.
-- On Windows, child-file and parent-directory `fsync` steps around promotion are no-ops;
-  writes themselves are flushed through write handles before rename.
-- Integrity hashes are unkeyed corruption checks, not signatures or protection against a
-  malicious writer with access to checkpoint files or the SQLite store.
-
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+Apache License 2.0. Copyright 2026 Summon Software Labs. No telemetry transmission.
